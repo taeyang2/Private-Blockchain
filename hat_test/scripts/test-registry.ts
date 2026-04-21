@@ -4,7 +4,7 @@ const CONTRACT_ADDRESS =
   "0x42699A7612A82f1d9C36148af9C77354759b210b" as `0x${string}`;
 
 const testHash =
-  "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef" as `0x${string}`;
+  "0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890" as `0x${string}`;
 
 async function main() {
   const connection = await hre.network.connect();
@@ -17,6 +17,9 @@ async function main() {
   console.log("=== 1. registerContent 호출 ===");
   const txHash = await contract.write.registerContent([testHash]);
   console.log("TX Hash:", txHash);
+  const publicClient = await connection.viem.getPublicClient();
+  await publicClient.waitForTransactionReceipt({ hash: txHash });
+  console.log("TX confirmed.");
 
   // 2. getContent 조회
   console.log("\n=== 2. getContent 조회 ===");

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy:besu": "hardhat run --network besuLocal scripts/deploy-content-registry.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

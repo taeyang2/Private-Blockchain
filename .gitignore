@@ -1,26 +1,20 @@
-# Node modules
-/node_modules
+# Hardhat
+hat_test/node_modules/
+hat_test/artifacts/
+hat_test/cache/
+hat_test/ignition/deployments/
+hat_test/dist/
 
-# Compilation output
-/dist
+# besu-qbft-docker (인프라 설정 - 별도 관리)
+besu-qbft-docker/
 
-# pnpm deploy output
-/bundle
+# quorum-quickstart - 수정한 파일만 추적
+quorum-quickstart/**
+!quorum-quickstart/docker-compose.yml
+!quorum-quickstart/config/
+!quorum-quickstart/config/tessera/
+!quorum-quickstart/config/tessera/Dockerfile
 
-# Hardhat Build Artifacts
-/artifacts
-
-# Hardhat compilation (v2) support directory
-/cache
-
-# Typechain output
-/types
-
-# Hardhat coverage reports
-/coverage
-
-# Environment variables
+# 기타
 .env
-
-# Ignition deployment artifacts (chain-specific)
-ignition/deployments/
+*.log

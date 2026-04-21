@@ -7,10 +7,14 @@ export default defineConfig({
     profiles: {
       default: {
         version: "0.8.28",
+        settings: {
+          evmVersion: "paris",
+        },
       },
       production: {
         version: "0.8.28",
         settings: {
+          evmVersion: "paris",
           optimizer: {
             enabled: true,
             runs: 200,
@@ -39,6 +43,7 @@ export default defineConfig({
       chainType: "l1",
       url:"http://localhost:8545",
       accounts: ["8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63"],
+      gasPrice: 0,
     }
   },
 });
